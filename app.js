@@ -5,7 +5,7 @@ const app = express();
 const MongoClient = require('mongodb').MongoClient;
 const uri = process.env.MONGO_DB_URI;
 
-app.get('/api/posts', async (req, res) => {
+app.get('/posts', async (req, res) => {
   let client;
 
   try {
