@@ -1,4 +1,4 @@
-require('dotenv');
+require('dotenv').config();
 const express = require('express');
 const app = express();
 
@@ -13,7 +13,7 @@ app.get('/api/posts', async (req, res) => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    const db = client.db('hdevops');
+    const db = client.db('herramientas_devops');
     const posts = await db.collection('posts').find().toArray();
     res.status(200).json(posts);
   } catch (error) {
